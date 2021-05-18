@@ -55,8 +55,8 @@ public class Company {
     }
 
     public void findTheClosestManager() {
-        final Employee first = new Employee(2, "Employee 5'", "Bucharest");
-        final Employee second = new Employee(3, "Employee 8'", "Bucharest");
+        final Employee first = new Employee(5, "Employee 5'", "Bucharest");
+        final Employee second = new Employee(8, "Employee 8'", "Bucharest");
 
         Employee manager = closestManager(this.rootEmployee, first, second);
         if (manager != null) {
@@ -91,6 +91,8 @@ public class Company {
                 pathToFirstEmployee.pop();
                 pathToSecondEmployee.pop();
             }
+
+            // TODO if needed we can further pop items until we get to the root item and keep track of the lowest found rank
 
             if (pathToFirstEmployee.size() > 0) {
                 return pathToFirstEmployee.pop();
